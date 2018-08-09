@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: httpd-server
+  labels: 
+    k8s-app: http-caitlin
+spec:
+  template:
+    metadata: 
+      labels:
+        k8s-app: http
+    spec:
+      containers:
+      - name: httpd-server
+        image: cahung/kubernetes_test
+        imagePullPolicy: Always
+        #command: ["sh", "-c", "sleep infinity"]
+          

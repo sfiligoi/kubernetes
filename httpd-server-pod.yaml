@@ -10,9 +10,12 @@ spec:
       labels:
         k8s-app: http
     spec:
+      hostNetwork: true
+      nodeSelector: 
+        kubernetes.io/hostname:  xcache-11.t2.ucsd.edu
       containers:
       - name: httpd-server
-        image: c8lin/kubernetes_test
+        image: cahung/kubernetes_test
         imagePullPolicy: Always
         #command: ["sh", "-c", "sleep infinity"]
           

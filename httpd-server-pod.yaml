@@ -17,5 +17,5 @@ spec:
       - name: httpd-server
         image: cahung/kubernetes_test
         imagePullPolicy: Always
-        #command: ["sh", "-c", "sleep infinity"]
+        command: ["sh", "-c", "sleep infinity"]
           

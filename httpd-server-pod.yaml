@@ -12,7 +12,7 @@ spec:
     spec:
       containers:
       - name: httpd-server
-        image: cahung/kubernetes_test
+        image: c8lin/kubernetes_test
         imagePullPolicy: Always
         #command: ["sh", "-c", "sleep infinity"]
           

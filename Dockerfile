@@ -6,6 +6,6 @@ RUN yum install -y httpd
 
 #ENTRYPOINT ["/usr/sbin"]
 
-CMD ["/usr/sbin/httpd", "-DFOREGROUND"]
+#CMD ["/usr/sbin/httpd", "-DFOREGROUND"]
 
 

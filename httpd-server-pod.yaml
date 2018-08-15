@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: httpd-server
+  name: httpdserver
   labels: 
     k8s-app: http-caitlin
 spec:
@@ -15,7 +15,7 @@ spec:
         kubernetes.io/hostname:  xcache-11.t2.ucsd.edu
       containers:
       - name: httpd-server
-        image: cahung/kubernetes_test
+        image: cahung/kubernetes
         imagePullPolicy: Always
         command: ["sh", "-c", "sleep infinity"]
           

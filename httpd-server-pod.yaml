@@ -14,8 +14,15 @@ spec:
       nodeSelector: 
         kubernetes.io/hostname:  xcache-11.t2.ucsd.edu
       containers:
-      - name: httpd-server
+      - name: httpdserver
         image: cahung/kubernetes
         imagePullPolicy: Always
         command: ["sh", "-c", "sleep infinity"]
+        volumeMounts: 
+          - name: port-config
+            mountPath: /etc/httpd/conf.d
+      volumes:
+        - name: port-config
+          configMap: 
+            name: portconfig 
           

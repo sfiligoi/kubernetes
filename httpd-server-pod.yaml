@@ -17,7 +17,8 @@ spec:
       - name: httpdserver
         image: cahung/kubernetes
         imagePullPolicy: Always
-        command: ["sh", "-c", "sleep infinity"]
+        #command: ["sh", "-c", "sleep infinity"]
+        command: ["/usr/sbin/httpd", "-DFOREGROUND"]
         volumeMounts: 
           - name: port-config
             mountPath: /etc/httpd/conf.d

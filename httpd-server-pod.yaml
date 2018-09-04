@@ -22,20 +22,15 @@ spec:
         env:
         - name: DATA1
           value: /data1/stash 
-        volumeMounts: 
-          - name: port-config
+        volumeMounts:
+          - name: config
             mountPath: /etc/httpd/conf.d
-          #- name: data-config
-           # mountPath: /etc/httpd/conf.d
           - name: datavol1
             mountPath: /data1/stash
       volumes:
-        - name: port-config
+        - name: config
           configMap: 
-            name: portconfig 
-        - name: data-config
-          #configMap:
-            #name: dataconfig
+            name: http-configs 
         - name: datavol1
           hostPath: 
             path: /data1

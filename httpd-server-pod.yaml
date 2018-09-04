@@ -14,16 +14,30 @@ spec:
       nodeSelector: 
         kubernetes.io/hostname:  xcache-11.t2.ucsd.edu
       containers:
-      - name: httpdserver
+      - name: httpd-server
         image: cahung/kubernetes
         imagePullPolicy: Always
         #command: ["sh", "-c", "sleep infinity"]
         command: ["/usr/sbin/httpd", "-DFOREGROUND"]
+        env:
+        - name: DATA1
+          value: /data1/stash 
         volumeMounts: 
           - name: port-config
             mountPath: /etc/httpd/conf.d
+          #- name: data-config
+           # mountPath: /etc/httpd/conf.d
+          - name: datavol1
+            mountPath: /data1/stash
       volumes:
         - name: port-config
           configMap: 
             name: portconfig 
-          
+        - name: data-config
+          #configMap:
+            #name: dataconfig
+        - name: datavol1
+          hostPath: 
+            path: /data1
+            type: Directory 
+

@@ -39,7 +39,7 @@ spec:
           hostPath: 
             path: /data1
             type: Directory 
-        - name: data2
+        - name: datavol2
           hostPath: 
             path: /data2
             type: Directory

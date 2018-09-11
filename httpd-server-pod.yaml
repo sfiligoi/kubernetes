@@ -22,11 +22,15 @@ spec:
         env:
         - name: DATA1
           value: /data1/stash 
+        - name: DATA2
+          value: /data2/stash
         volumeMounts:
           - name: config
             mountPath: /etc/httpd/conf.d
           - name: datavol1
             mountPath: /data1/stash
+          - name: datavol2
+            mountPath: /data2/stash
       volumes:
         - name: config
           configMap: 
@@ -35,4 +39,9 @@ spec:
           hostPath: 
             path: /data1
             type: Directory 
+        - name: data2
+          hostPath: 
+            path: /data2
+            type: Directory
+          
 

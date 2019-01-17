@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: httpdserver
   labels: 
-    k8s-app: http-caitlin
+    k8s-app: http
 spec:
   template:
     metadata: 
@@ -15,10 +15,10 @@ spec:
         kubernetes.io/hostname:  xcache-11.t2.ucsd.edu
       containers:
       - name: httpd-server
-        image: cahung/kubernetes
+        image: sfiligoi/kubernetes
         imagePullPolicy: Always
         #command: ["sh", "-c", "sleep infinity"]
-        command: ["/usr/sbin/httpd", "-DFOREGROUND"]
+        # command: ["/usr/sbin/httpd", "-DFOREGROUND"]
         env:
         - name: DATA1
           value: /data1/stash 
